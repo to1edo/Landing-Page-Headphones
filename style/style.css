@@ -1,0 +1,385 @@
+:root{
+    --fuenteSecundaria: 'Lato', sans-serif;
+    --fuentePrincipal: 'Roboto', sans-serif;
+    --primario: #1073BA;
+    --secundario: #00DA55;
+    --gris: #3B3B3B;
+    --blanco: #FFFFFF;
+    --negro: #1F1E1E;
+    --grisClaro: #e1e1e1;
+}
+
+
+html {
+    box-sizing: border-box;
+      
+  font-size: 62.5%; /* 1rem = 10px */
+
+  scroll-snap-type:y mandatory;  /* dar el efecto de scroll a nuesta pagina*/
+}   
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px;
+    margin: 0;
+    font-family: var(--fuentePrincipal);
+    
+}
+p{
+    margin: 0;
+}
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.5rem;
+}
+h3{
+    font-size: 3rem;
+}
+
+        /*---  HEADER --- */
+.header{
+    color: var(--blanco);
+    position: relative;
+   background-color: var(--negro);
+   overflow: hidden;
+}
+
+.videobg{
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.video{
+    height: 100%;
+}
+
+@media (min-width:768px){
+    .videobg{
+        width: 100%;
+    }
+}
+
+@media (min-width:1080px){
+    .video{
+        height: unset;
+        width: 100%;
+    }
+}
+.contenidoHeader{
+    text-align: center;
+    padding: 4rem;
+    position: relative;
+    z-index: 1;
+}
+.headerTexto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 4rem;
+   }
+   
+.headerLineaUno{
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.degradado{
+    font-size: 6rem;
+    font-weight: 700;
+    /* gradiente*/ 
+    background: -webkit-linear-gradient( left,#1073BA 30%, #00DA55 100% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header p{
+    padding: 1rem 0;
+}
+.headerPrecio span{
+    font-size: 6rem;
+    font-weight: 900;
+}
+
+@media (min-width:768px){
+    .contenidoHeader{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding:12rem 0;
+        text-align: left;
+    }
+    .headerTexto{
+        padding-top: 0rem;
+       }
+    .headerNombreProducto{
+    font-size: 10rem;
+    font-weight: 900;
+    }
+}
+
+/* SECCION DE ICONOS */
+.seccionIconos{
+    position: relative;
+    z-index: 2;
+    background-color: var(--blanco);
+}
+.iconos{
+    padding: 1rem;
+}
+@media (min-width: 768px){
+    .iconos{
+        display: flex;
+        gap: 2rem;
+        padding: 4rem;
+    }
+}
+
+.icono{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+   
+}
+
+.icono img{
+    width: 5rem;
+    margin: 0 auto;
+}
+
+.icono h3{
+    color: var(--primario);
+    text-transform: uppercase;
+}
+
+
+
+/* seccion sobre TechPRO */
+
+
+.sobreTech{
+    background-image: linear-gradient( to bottom,  transparent 50%,var(--primario)50%), url(../img/imagen-mujer.webp);
+    background-repeat: no-repeat;
+ 
+    background-position: right;
+    background-size: cover;
+}
+
+.sobreTechContenido{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+.sobreTechTexto{
+    color: var(--blanco);
+    grid-row: 2/3;
+    padding: 2rem;
+    text-align: center;
+}
+@media (min-width: 768px){  
+    .sobreTechContenido{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 4rem;
+    padding: 10rem;
+    grid-template-rows:unset;
+    }
+    
+    .sobreTech{
+    background-image: linear-gradient( to right, var(--primario)50%, transparent 50%), url(../img/imagen-mujer.webp);
+    background-repeat: no-repeat;
+    grid-row: 1/2;
+    background-position: right;
+    }
+}
+
+
+.sobreTechTexto h2{
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.sobreTechTexto p {
+    font-size: 2rem;
+    line-height: 2;
+}
+
+
+/* seccion de Modelos -*/
+
+.modelos h2{
+    text-align: center;
+    margin: 0;
+    margin-top: 5rem;
+}
+.modelos p{
+    padding: 2rem 0;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.modelo{
+    background-color: var(--grisClaro); 
+    padding-left: 4rem;
+    border-radius: 2rem;
+   color: var(--primario);
+
+   background-repeat: no-repeat;
+   background-position: 90% center;
+   background-size: 15rem;
+   transition: all 0.3s;
+}
+.listaModelos{
+    display: flex;
+    flex-direction: column-reverse;
+    /* align-items: center; */
+    padding: 2rem 0;
+    gap: 2rem;
+}
+@media (min-width: 992px){
+    .listaModelos{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 4rem;
+    }
+    .modeloZ {
+        grid-area: 1/2/3/3;
+        background-size: 25rem;
+    }
+}
+
+
+.modeloX {
+    background-image: url(/img/modelo-x.svg);
+    
+}
+.modeloY {
+    background-image: url(/img/modelo-y.svg);
+}
+.modelo:last-of-type{
+    background-color: var(--primario);
+    color: var(--blanco); 
+    background-image: url(/img/modelo-z.svg);
+}
+.modeloZ p{
+    font-size: 6rem;
+}
+
+.modelo:hover{
+    background-size:30rem;
+    transform: scale(1.05);
+}
+
+
+/* seccion de Newsletter */
+
+.newsletter{
+    background-image: linear-gradient( to bottom,  transparent 30%,var(--blanco)60%), url(../img/newsletter.webp);
+    background-repeat: no-repeat;
+ 
+    background-position: center;
+    background-size: cover;
+}
+
+.newsletterContenido{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+}
+.newsletterTexto{
+    color: var(--blanco);
+    grid-row: 2/3;
+    padding: 2rem;
+    text-align: center;
+    color: #000;
+}
+@media (min-width: 768px){  
+    .newsletterContenido{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 4rem;
+    padding:5rem;
+    grid-template-rows:unset;
+    }
+    
+    .newsletter{
+    background-image: linear-gradient( to left, var(--blanco)50% ,  transparent 70% ) , url(/img/newsletter.webp);
+    /* background-repeat: no-repeat; */
+    background-position:left;
+    }
+    .newsletterTexto {
+        grid-column: 2/3;
+    }
+}
+
+
+.newsletterTexto h2{
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.newsletterTexto p {
+    text-align: justify;
+}
+
+form input[type="email"]{
+    width: 100%;
+    padding: 1rem;
+}
+
+form input[type="submit"]{
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--primario);
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.entradaCorreo{
+    padding: 2rem 0;
+}
+
+form input[type="submit"]:hover{
+    transform: scale(1.05);
+}
+
+
+/* footer */
+
+#textoFooter {
+    padding: 1rem;
+    text-align: center;
+
+}
+footer span{
+    font-weight:700;
+    color: var(--primario);
+}
+
+
+/* Efectos de scroll */
+
+
+.header,.sobreTech,.seccionIconos ,.modelos, footer {  /*secciones en la que se va a detener el scroll*/
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+}
